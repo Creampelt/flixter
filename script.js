@@ -1,4 +1,4 @@
-const API_TOKEN = "b81d3d14fd8c140669eb6a41301e9499";
+const API_TOKEN = "YOUR_API_TOKEN";
 
 // const moviesGrid = document.querySelector("#movies-grid");
 let page = 1;
