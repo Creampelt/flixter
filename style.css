@@ -1,1 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Fascinate&family=League+Spartan:wght@300;400;700;900&display=swap');
 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'League Spartan', Arial, sans-serif;
+    background-color: #FFF;
+    color: #050505;
+    margin: 0;
+}
+
+nav {
+    transition: all 0.2s ease;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    background-color: #FFF;
+    padding: 40px;
+    box-shadow: #0002 0 3px 5px;
+}
+
+nav.top {
+    box-shadow: none;
+}
+
+#heading {
+    font-family: 'Fascinate', Arial, sans-serif;
+    font-size: 100px;
+    margin: 0;
+    text-align: center;
+}
+
+#search {
+    position: relative;
+    width: 100%;
+    padding: 10px 30px;
+}
+
+#search-input {
+    width: 100%;
+    padding: 20px 25px;
+    border-radius: 5px;
+    border: none;
+    background-color: #EBEBEB;
+    font-size: 20px;
+    font-family: 'League Spartan', Arial, sans-serif;
+}
+
+#search-input::placeholder {
+    color: #05050588;
+}
+
+#close-search-btn {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 45px;
+    top: calc(50% - 15px);
+    opacity: 75%;
+    cursor: pointer;
+}
+
+#close-search-btn.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#movies-grid {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 30px 60px;
+}
+
+.movie-card {
+    transition: all 0.2s ease;
+    padding: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.movie-card:hover {
+    transform: translate(5px, -5px);
+}
+
+.movie-poster-wrapper {
+    height: 300px;
+    width: 200px;
+    margin: 10px 0;
+}
+
+.movie-poster {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.movie-votes img {
+    width: 15px;
+}
+
+.movie-votes {
+    margin: 0;
+    font-weight: 300;
+}
+
+.movie-title {
+    font-size: 20px;
+    margin: 0;
+    margin-top: 5px;
+    width: 200px;
+}
+
+#load-more-movies-btn {
+    transition: all 0.2s ease;
+    width: calc(100% - 60px);
+    margin: 10px 30px;
+    padding: 20px;
+    background-color: #EBEBEB;
+    border: none;
+    font-family: 'League Spartan', Arial, sans-serif;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#load-more-movies-btn:hover {
+    background-color: #d9d9d9;
+}
