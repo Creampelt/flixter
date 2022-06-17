@@ -42,7 +42,7 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 ### Walkthrough Video
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/FIqqv35G2AU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+![Walkthrough video demo](https://media.giphy.com/media/qfzmpKCXHyUPLki8SZ/giphy.gif)
 
 ### Reflection
 
@@ -56,7 +56,7 @@ If I had more time, I think I probably would've tried to add some sort of search
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+My project demo went pretty well :smiley:
 
 ### Open-source libraries used
 
