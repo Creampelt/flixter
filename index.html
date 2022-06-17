@@ -9,16 +9,35 @@
     <title>Flixter</title>
 </head>
 <body>
+    <nav class="top">
+        <h1 id="heading">flixter</h1>
+        <form id="search">
+            <input id="search-input" placeholder="search available movies...">
+            <img id="close-search-btn" class="hidden" src="images/xmark-solid.svg" alt="x">
+        </div>
+    </nav>
     <div id="container">
-        <nav class="top">
-            <h1 id="heading">flixter</h1>
-            <div id="search">
-                <input id="search-input" placeholder="search available movies...">
-                <img id="close-search-btn" class="hidden" src="images/xmark-solid.svg" alt="x">
-            </div>
-        </nav>
         <div id="movies-grid"></div>
-        <button id="load-more-movies-btn" onclick="loadNextPage()">show more results</button>
+        <button type="button" id="load-more-movies-btn" onclick="loadNextPage()">show more results</button>
+    </div>
+    <div id="popup-background" class="closed">
+        <div id="popup">
+            <!-- <img id="close-popup-btn" src="images/xmark-solid.svg" alt="x"> -->
+            <h2>Movie Title Here</h2>
+            <div id="movie-detailed-info">
+                <p>9.5/10</p>
+                <p>Western</p>
+                <p>English</p>
+                <p>1hr 45min</p>
+                <p><a href="https://www.imdb.com/" target="_blank">View on IMDB</a></p>
+            </div>
+            <div id="popup-img">
+                <img src="images/poster-placeholder.png">
+            </div>
+            <p id="popup-description">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
     </div>
 </body>
 </html>
