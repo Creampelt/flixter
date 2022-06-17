@@ -190,6 +190,7 @@ nav.top {
     max-width: 75vw;
     max-height: 75vh;
     background-color: #fff;
+    overflow-x: hidden;
     overflow-y: scroll;
     padding: 60px;
     border-radius: 15px;
@@ -214,12 +215,16 @@ nav.top {
 #movie-detailed-info {
     display: flex;
     padding: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 #movie-detailed-info p {
-    margin: 0;
+    margin: 5px;
     padding: 0 20px;
     border-right: solid 2px black;
+    text-align: center;
 }
 
 #movie-detailed-info p:last-child {
@@ -240,4 +245,39 @@ nav.top {
 #popup-description {
     width: calc(400px * 3 / 2);
     margin: 20px 0 0 0;
+}
+
+@media screen and (max-width: 780px) {
+    nav {
+        flex-direction: column;
+    }
+
+    #search {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 960px) and (min-width: 481px) {
+    #movie-detailed-info, #popup-description {
+        width: calc(75vw - 120px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #heading {
+        font-size: 21vw;
+    }
+
+    #search {
+        padding: 10px;
+    }
+
+    #popup {
+        padding: 30px;
+        max-width: 85vw;
+    }
+
+    #movie-detailed-info, #popup-description {
+        width: calc(85vw - 60px);
+    }
 }

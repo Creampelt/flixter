@@ -7,6 +7,11 @@ let totalPages = 1;
 let genres = {};
 let popupOpen = false;
 
+function capitalizeFirstLetter(str) {
+    if (str.length === 0) return str;
+    return str.charAt(0).toUpperCase() + str.slice(1)
+}
+
 async function executeRequest(request) {
     const response = await fetch(`https://api.themoviedb.org/3${request}`);
     const data = await response.json();
@@ -26,7 +31,7 @@ async function executeMovieRequest(id) {
     const data = {
         title: movieData.title,
         rating: movieData.vote_average,
-        genre: movieData.genres.map(({ name }) => name.toLowerCase()).join(", "),
+        genre: capitalizeFirstLetter(movieData.genres.map(({ name }) => name.toLowerCase()).join(", ")),
         language: ISO_LANGS[movieData.original_language].name,
         runtime: movieData.runtime,
         overview: movieData.overview,
@@ -151,20 +156,24 @@ function openPopupAndLoad() {
 function populatePopup({ title, rating, genre, language, runtime, overview, imdbID, trailerID }) {
     const popupWrapper = document.querySelector("#popup-background");
     const popup = document.querySelector("#popup");
+    const videoWidth = window.innerWidth <= 480 ?
+        window.innerWidth * 0.85 - 60 :
+        Math.min(window.innerWidth * 0.75 - 120, 600);
+    const videoHeight = videoWidth * 2 / 3;
     popup.innerHTML = `
         <h2>${title}</h2>
         <div id="movie-detailed-info">
             <p>${rating}/10</p>
-            <p>${genre}</p>
+            ${genre ? `<p>${genre}</p>` : ""}
             <p>${language}</p>
             <p>${runtime} min</p>
-            <p><a href="https://www.imdb.com/title/${imdbID}" target="_blank">IMDB</a></p>
+            ${imdbID ? `<p><a href="https://www.imdb.com/title/${imdbID}" target="_blank">IMDB</a></p>` : ""}
         </div>
-        <div id="popup-img">
+        <div id="popup-img" style="width: ${videoWidth}px; height: ${videoHeight}px;">
             ${trailerID ? 
                 `<iframe
-                    width="600"
-                    height="400"
+                    width="${videoWidth}"
+                    height="${videoHeight}"
                     src="https://www.youtube.com/embed/${trailerID}"
                     title="Trailer for ${title}"
                     frameborder="0"
